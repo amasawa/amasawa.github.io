@@ -93,19 +93,19 @@
 
 
 
-<meta name="description" content="题目来源： 题目：实验吧—简单的sql注入3 实验吧所有题目答案：wrteup  第一步：过滤了什么 检查网页，发现传值方式为get,所以直接在ip地址中操作 键入：&amp;#39;，报错，说明可以注入 键入：&amp;#39; #报错，键入：‘ %23还是报错，怀疑空格被过滤所以 键入：‘/**/%23,没报错成功注入">
+<meta name="description" content="题目来源： 题目：实验吧—简单的sql注入3 实验吧所有题目答案：wrteup">
 <meta name="keywords" content="SQL注入">
 <meta property="og:type" content="article">
 <meta property="og:title" content="简单的SQL注入">
 <meta property="og:url" content="http://yoursite.com/2017/07/28/简单的SQL注入/index.html">
 <meta property="og:site_name" content="AmasawaWo&#39;s Blog">
-<meta property="og:description" content="题目来源： 题目：实验吧—简单的sql注入3 实验吧所有题目答案：wrteup  第一步：过滤了什么 检查网页，发现传值方式为get,所以直接在ip地址中操作 键入：&amp;#39;，报错，说明可以注入 键入：&amp;#39; #报错，键入：‘ %23还是报错，怀疑空格被过滤所以 键入：‘/**/%23,没报错成功注入">
+<meta property="og:description" content="题目来源： 题目：实验吧—简单的sql注入3 实验吧所有题目答案：wrteup">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://www.baidu.com/img/baidu_jgylogo3.gif">
-<meta property="og:updated_time" content="2017-08-08T14:21:15.000Z">
+<meta property="og:updated_time" content="2018-09-25T11:24:24.467Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简单的SQL注入">
-<meta name="twitter:description" content="题目来源： 题目：实验吧—简单的sql注入3 实验吧所有题目答案：wrteup  第一步：过滤了什么 检查网页，发现传值方式为get,所以直接在ip地址中操作 键入：&amp;#39;，报错，说明可以注入 键入：&amp;#39; #报错，键入：‘ %23还是报错，怀疑空格被过滤所以 键入：‘/**/%23,没报错成功注入">
+<meta name="twitter:description" content="题目来源： 题目：实验吧—简单的sql注入3 实验吧所有题目答案：wrteup">
 <meta name="twitter:image" content="https://www.baidu.com/img/baidu_jgylogo3.gif">
 
 
@@ -422,14 +422,14 @@
         <p><form onsubmit="return baiduWithHttps(this)" action="http://www.baidu.com/baidu" target="_blank"><br>    <input name="tn" type="hidden" value="SE_zzsearchcode_shhzc78w"><br>    <a href="https://www.baidu.com/" target="_blank"><br>        <img src="https://www.baidu.com/img/baidu_jgylogo3.gif" alt="Baidu" align="bottom" border="0"><br>    </a><br>    <input type="text" onfocus="checkHttps" name="word" size="30"><br>    <input type="submit" value="百度搜索"></form></p>
 <h2 id="题目来源："><a href="#题目来源：" class="headerlink" title="题目来源："></a>题目来源：</h2><ul>
 <li>题目：<a href="http://ctf5.shiyanbar.com/web/index_2.php" target="_blank" rel="external">实验吧—简单的sql注入3</a></li>
-<li>实验吧所有题目答案：<a href="http://blog.csdn.net/qq_18661257/article/details/53739543" target="_blank" rel="external">wrteup</a></li>
+<li>实验吧所有题目答案：<a href="http://blog.csdn.net/qq_18661257/article/details/53739543" target="_blank" rel="external">wrteup</a><a id="more"></a>
+</li>
 </ul>
 <h2 id="第一步：过滤了什么"><a href="#第一步：过滤了什么" class="headerlink" title="第一步：过滤了什么"></a>第一步：过滤了什么</h2><ol>
 <li>检查网页，发现传值方式为get,所以直接在ip地址中操作</li>
 <li>键入：<code>&#39;，</code>报错，说明可以注入</li>
 <li>键入：<code>&#39; #</code>报错，键入：<code>‘ %23</code>还是报错，怀疑空格被过滤所以 键入：<code>‘/**/%23</code>,没报错成功注入</li>
 </ol>
-<a id="more"></a>
 <h2 id="第二步：猜字段"><a href="#第二步：猜字段" class="headerlink" title="第二步：猜字段"></a>第二步：猜字段</h2><ol>
 <li>解释一下为什么要猜字段</li>
 <li>键入：<code>&#39;/**/order/**/by/**/1/**/%23</code> 正常</li>

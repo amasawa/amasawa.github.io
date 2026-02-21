@@ -1,0 +1,173 @@
+---
+layout: null
+title: About
+---
+
+<html>
+<head>
+    <title>About - Zhangkai Wu</title>
+    <meta charset='UTF-8'>
+    <meta content='width=device-width, initial-scale=1' name='viewport'/>
+    <link rel='shortcut icon' href='/favicon.png?v=e' />
+
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Navigation */
+        .nav {
+            margin-bottom: 40px;
+        }
+
+        .nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        .nav a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Profile section */
+        .profile {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 30px;
+            align-items: flex-start;
+        }
+
+        .profile-photo img {
+            width: 150px;
+            height: auto;
+        }
+
+        .profile-info h1 {
+            font-size: 1.5em;
+            font-weight: normal;
+            margin: 0 0 10px 0;
+        }
+
+        .profile-info p {
+            margin: 5px 0;
+        }
+
+        .profile-info .links {
+            margin-top: 10px;
+        }
+
+        .profile-info .links a {
+            color: #0066cc;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .profile-info .links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Research section */
+        h2 {
+            font-size: 1.2em;
+            font-weight: normal;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .profile {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/publications">Publications</a></li>
+            </ul>
+        </nav>
+
+        <div class="profile">
+            <div class="profile-photo">
+                <!-- 替换为你的照片路径 -->
+                <img src="/assets/photo.jpg" alt="Zhangkai Wu">
+            </div>
+            <div class="profile-info">
+                <h1>Zhangkai Wu 吴章凯</h1>
+                <p>Postdoctoral Research Fellow, Macquarie University</p>
+                <p>PhD, University of Technology Sydney</p>
+                <p>Master, Nanjing University</p>
+                <div class="links">
+                    <a href="mailto:zhangkai.wu@mq.edu.au">Email</a>
+                    <a href="#">Google Scholar</a>
+                    <a href="#">Github</a>
+                </div>
+            </div>
+        </div>
+
+        <p>I am driven by the potential of generative models in transformative real-world applications. My research spans multiple modalities:</p>
+
+        <h2>Time-series data</h2>
+        <ul>
+            <li>Anomaly detection</li>
+        </ul>
+
+        <h2>Image data</h2>
+        <ul>
+            <li>Disentangled representation learning</li>
+            <li>One-step generation</li>
+            <li>Image/Video Editing</li>
+        </ul>
+
+        <h2>Language data</h2>
+        <ul>
+            <li>RLHF</li>
+        </ul>
+
+        <p>Please refer to my <a href="/publications">publications</a> for the full list of my research papers.</p>
+    </div>
+</body>
+</html>

@@ -113,9 +113,45 @@ title: About
             text-decoration: underline;
         }
 
+        /* Research table */
+        .research-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .research-table th {
+            text-align: left;
+            padding: 10px 15px;
+            border-bottom: 2px solid #333;
+            font-weight: normal;
+            font-size: 1.1em;
+        }
+
+        .research-table td {
+            padding: 8px 15px;
+            vertical-align: top;
+        }
+
+        .research-table td span {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .research-table .year {
+            color: #888;
+            font-size: 0.9em;
+        }
+
         @media (max-width: 600px) {
             .profile {
                 flex-direction: column;
+            }
+
+            .research-table th,
+            .research-table td {
+                padding: 8px 10px;
+                font-size: 0.9em;
             }
         }
     </style>
@@ -148,24 +184,38 @@ title: About
             </div>
         </div>
 
-        <p>I am driven by the potential of generative models in transformative real-world applications. My research spans multiple modalities:</p>
+        <p>I am driven by the potential of generative models in transformative real-world applications.</p>
 
-        <h2>Time-series data</h2>
-        <ul>
-            <li>Anomaly detection</li>
-        </ul>
-
-        <h2>Image data</h2>
-        <ul>
-            <li>Disentangled representation learning</li>
-            <li>One-step generation</li>
-            <li>Image/Video Editing</li>
-        </ul>
-
-        <h2>Language data</h2>
-        <ul>
-            <li>RLHF</li>
-        </ul>
+        <h2>Research</h2>
+        <table class="research-table">
+            <thead>
+                <tr>
+                    <th>Settings</th>
+                    <th>Tasks</th>
+                    <th>Models</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span>Few-shot Learning <span class="year">(2018-2021)</span></span>
+                        <span>Meta-Learning <span class="year">(2018-2021)</span></span>
+                    </td>
+                    <td>
+                        <span>Disentanglement <span class="year">(2021-)</span></span>
+                        <span>Time-series Anomaly Detection <span class="year">(2023-)</span></span>
+                        <span>One-step Generation <span class="year">(2025-)</span></span>
+                        <span>Video-Editing <span class="year">(2025-)</span></span>
+                    </td>
+                    <td>
+                        <span>VAE <span class="year">(2021-)</span></span>
+                        <span>Diffusion Models <span class="year">(2023-)</span></span>
+                        <span>Bayesian Flow Network <span class="year">(2024-)</span></span>
+                        <span>Flow Matching <span class="year">(2025-)</span></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
         <p>Please refer to my <a href="/publications">publications</a> for the full list of my research papers.</p>
     </div>

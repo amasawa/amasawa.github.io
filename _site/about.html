@@ -1,0 +1,496 @@
+<html>
+<head>
+    <title>About - Zhangkai Wu</title>
+    <meta charset='UTF-8'>
+    <meta content='width=device-width, initial-scale=1' name='viewport'/>
+    <link rel='shortcut icon' href='/favicon.png?v=e' />
+
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Navigation */
+        .nav {
+            margin-bottom: 40px;
+        }
+
+        .nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        .nav a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Two-column page layout */
+        .page-wrap {
+            display: flex;
+            align-items: flex-start;
+            gap: 50px;
+        }
+
+        .col-left {
+            width: 200px;
+            flex-shrink: 0;
+            position: sticky;
+            top: 40px;
+        }
+
+        .col-left img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .col-left h1 {
+            font-size: 1.2em;
+            font-weight: normal;
+            margin: 0 0 8px 0;
+        }
+
+        .col-left p {
+            font-size: 0.88em;
+            margin: 4px 0;
+            color: #555;
+        }
+
+        .col-left .links {
+            margin-top: 10px;
+        }
+
+        .col-left .links a {
+            color: #0066cc;
+            text-decoration: none;
+            font-size: 0.88em;
+            margin-right: 8px;
+        }
+
+        .col-left .links a:hover {
+            text-decoration: underline;
+        }
+
+        .col-left .bio {
+            margin-top: 16px;
+            font-size: 0.88em;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .col-right {
+            flex: 1;
+            min-width: 0;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        /* Three-column layout */
+        .page-layout {
+            display: flex;
+            align-items: flex-start;
+            margin-top: 10px;
+        }
+
+        /* ── Left sidebar: section nav / progress ── */
+        .sidebar-left {
+            width: 105px;
+            flex-shrink: 0;
+            padding-right: 18px;
+        }
+
+        .section-nav {
+            position: sticky;
+            top: 30px;
+        }
+
+        .section-nav-inner {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Vertical progress line */
+        .section-nav-inner::before {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 10px;
+            bottom: 10px;
+            width: 1px;
+            background: #ddd;
+        }
+
+        .snav-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #aaa;
+            font-size: 0.73em;
+            padding: 10px 0;
+            position: relative;
+            transition: color 0.2s;
+        }
+
+        .snav-item:hover {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .snav-dot {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: #ccc;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+            transition: background 0.2s;
+        }
+
+        .snav-item:hover .snav-dot {
+            background: #555;
+        }
+
+        /* Right column headings */
+        .col-right h2 {
+            font-size: 1.05em;
+            font-weight: bold;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #222;
+            margin-top: 32px;
+            margin-bottom: 14px;
+        }
+
+        /* Research table */
+        .research-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+        }
+
+        .research-table th {
+            text-align: left;
+            padding: 10px 15px;
+            border-bottom: 2px solid #333;
+            font-weight: normal;
+            font-size: 1.05em;
+        }
+
+        .research-table td {
+            padding: 8px 15px;
+            vertical-align: top;
+        }
+
+        .research-table td span {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .research-table .year {
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        /* Teaching timeline */
+        .timeline {
+            position: relative;
+            margin: 16px 0 10px 0;
+            padding-bottom: 10px;
+            overflow-x: auto;
+        }
+
+        .timeline-track {
+            display: flex;
+            align-items: flex-start;
+            position: relative;
+            min-width: 500px;
+        }
+
+        .timeline-track::before {
+            content: '';
+            position: absolute;
+            top: 18px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #bbb;
+        }
+
+        .timeline-item {
+            flex: 1;
+            position: relative;
+            padding-top: 40px;
+            padding-right: 12px;
+            min-width: 110px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 12px;
+            left: 0;
+            width: 13px;
+            height: 13px;
+            background: #333;
+            border-radius: 50%;
+        }
+
+        .timeline-year {
+            font-size: 0.85em;
+            color: #888;
+            margin-bottom: 4px;
+        }
+
+        .timeline-title {
+            font-size: 0.9em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .timeline-desc {
+            font-size: 0.82em;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        /* Grouped timeline item: two dots, shared content */
+        .timeline-group {
+            flex: 2;
+            position: relative;
+            padding-top: 40px;
+            padding-right: 12px;
+            min-width: 190px;
+        }
+
+        .tg-dot {
+            position: absolute;
+            top: 12px;
+            width: 13px;
+            height: 13px;
+            background: #333;
+            border-radius: 50%;
+        }
+
+        .tg-dot-left  { left: 0; }
+        .tg-dot-right { left: calc(50% - 6px); }
+
+        .tg-years {
+            display: flex;
+            font-size: 0.85em;
+            color: #888;
+            margin-bottom: 4px;
+        }
+
+        .tg-years span { flex: 1; }
+
+        /* Professional Services */
+        .services-list {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        .services-list li {
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        /* News */
+        .news-card {
+            margin-bottom: 10px;
+        }
+
+        .news-card-title {
+            color: #cc0000;
+            font-size: 1.1em;
+            font-weight: normal;
+            margin: 0 0 10px 0;
+        }
+
+        .news-card ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .news-card li {
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 6px;
+        }
+
+        .news-deadline {
+            color: #cc0000;
+            font-weight: bold;
+        }
+
+        /* Responsive */
+        @media (max-width: 700px) {
+            .page-wrap { flex-direction: column; }
+            .col-left { width: 100%; position: static; }
+            .col-right h2 { margin-left: 0; }
+            .research-table th,
+            .research-table td { padding: 8px 10px; font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/publications">Publications</a></li>
+            </ul>
+        </nav>
+
+        <div class="page-wrap">
+
+            <!-- Left: profile -->
+            <aside class="col-left">
+                <img src="/assets/photo.jpg" alt="Zhangkai Wu">
+                <h1>Zhangkai Wu 吴章凯</h1>
+                <p>Postdoctoral Research Fellow, Macquarie University</p>
+                <p>PhD, University of Technology Sydney</p>
+                <p>Master, Nanjing University</p>
+                <div class="links">
+                    <a href="mailto:zhangkai.wu@mq.edu.au">Email</a>
+                    <a href="#">Google Scholar</a>
+                    <a href="#">Github</a>
+                </div>
+            </aside>
+
+            <!-- Right: content -->
+            <main class="col-right">
+
+                <div class="news-card">
+                    <p class="news-card-title">!! News !!</p>
+                    <ul>
+                        <li>
+                            <em>Journal of Imaging</em> special issue: "<a href="https://www.mdpi.com/journal/jimaging/special_issues/NL83861VY0x">XTM-Imaging: Explainable and Trustworthy Multimodal Imaging for Real-World Applications</a>"
+                            <span class="news-deadline">Deadline: 31 December 2026</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <h2 id="research">Research</h2>
+                <p>My research interests lie in foundational generative models, including diffusion models, LLMs, and CLIP, from both theoretical and model design perspectives, as well as their applications across different modalities and real-world scenarios.</p>
+                <table class="research-table">
+                    <thead>
+                        <tr>
+                            <th>Settings</th>
+                            <th>Tasks</th>
+                            <th>Models</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span>Few-shot Learning <span class="year">(2018-2021)</span></span>
+                                <span>Meta-Learning <span class="year">(2018-2021)</span></span>
+                            </td>
+                            <td>
+                                <span>Disentanglement <span class="year">(2021-)</span></span>
+                                <span>Time-series Anomaly Detection <span class="year">(2023-)</span></span>
+                                <span>One-step Generation <span class="year">(2025-)</span></span>
+                                <span>Video-Editing <span class="year">(2025-)</span></span>
+                                <span>RLHF <span class="year">(2026-)</span></span>
+                            </td>
+                            <td>
+                                <span>VAE <span class="year">(2021-)</span></span>
+                                <span>Diffusion Models <span class="year">(2023-)</span></span>
+                                <span>Bayesian Flow Network <span class="year">(2024-)</span></span>
+                                <span>Flow Matching <span class="year">(2025-)</span></span>
+                                <span>Sparse Autoencoder <span class="year">(2026-)</span></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Please refer to my <a href="/publications">publications</a> for the full list of my research papers.</p>
+
+                <h2 id="teaching">Teaching</h2>
+                <div class="timeline">
+                    <div class="timeline-track">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-year">2018</div>
+                            <div class="timeline-title">Advanced Machine Learning</div>
+                            <div class="timeline-desc">Co-lectured with Prof. Yang Gao</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-year">2021</div>
+                            <div class="timeline-title">Data Science<br>COMP220/6200</div>
+                            <div class="timeline-desc">Co-lectured with Prof. Longbing Cao</div>
+                        </div>
+                        <div class="timeline-group">
+                            <div class="tg-dot tg-dot-left"></div>
+                            <div class="tg-dot tg-dot-right"></div>
+                            <div class="tg-years">
+                                <span>2024 S2</span>
+                                <span>2025 S1 S2</span>
+                            </div>
+                            <div class="timeline-title">Advanced Machine Learning<br>COMP8221</div>
+                            <div class="timeline-desc">GNN, Generative Models, RL<br>Co-lectured with Dr. Xuhui Fan &amp; Dr. Yanqiu Wu</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-year">2026 S1</div>
+                            <div class="timeline-title">Advanced Natural Language Processing</div>
+                            <div class="timeline-desc">COMP8420<br>Guest Lecture</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 id="services">Professional Services</h2>
+                <ul class="services-list">
+                    <li>Proceedings Chair in <a href="https://pakdd2025.org/organization/">PAKDD 2025</a></li>
+                    <li>Special Track Chair in <a href="https://besc-conf.org/2025/special-session-3">BESC 2025</a></li>
+                    <li>Guest Editor in <a href="https://www.mdpi.com/journal/jimaging/special_issues/NL83861VY0x">Journal of Imaging</a>, end in 31 December 2026</li>
+                </ul>
+
+            </main>
+
+        </div><!-- .page-wrap -->
+    </div>
+</body>
+</html>

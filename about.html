@@ -237,97 +237,48 @@ title: About
             font-size: 0.9em;
         }
 
-        /* Teaching timeline */
-        .timeline {
-            position: relative;
+        /* Teaching slider */
+        .teaching-slider {
             margin: 16px 0 10px 0;
-            padding-bottom: 10px;
-            overflow-x: auto;
         }
 
-        .timeline-track {
+        .slider-labels {
             display: flex;
-            align-items: flex-start;
-            position: relative;
-            min-width: 500px;
+            justify-content: space-between;
+            font-size: 0.8em;
+            color: #888;
+            margin-bottom: 4px;
         }
 
-        .timeline-track::before {
-            content: '';
-            position: absolute;
-            top: 18px;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: #bbb;
+        .teaching-slider input[type="range"] {
+            width: 100%;
+            margin: 0;
+            cursor: pointer;
         }
 
-        .timeline-item {
-            flex: 1;
-            position: relative;
-            padding-top: 40px;
-            padding-right: 12px;
-            min-width: 110px;
+        .slide-content {
+            margin-top: 16px;
+            min-height: 80px;
         }
 
-        .timeline-dot {
-            position: absolute;
-            top: 12px;
-            left: 0;
-            width: 13px;
-            height: 13px;
-            background: #333;
-            border-radius: 50%;
-        }
-
-        .timeline-year {
+        .slide-content .slide-year {
             font-size: 0.85em;
             color: #888;
             margin-bottom: 4px;
         }
 
-        .timeline-title {
-            font-size: 0.9em;
+        .slide-content .slide-title {
+            font-size: 0.95em;
             font-weight: bold;
             color: #333;
             margin-bottom: 4px;
         }
 
-        .timeline-desc {
-            font-size: 0.82em;
-            color: #555;
-            line-height: 1.4;
-        }
-
-        /* Grouped timeline item: two dots, shared content */
-        .timeline-group {
-            flex: 2;
-            position: relative;
-            padding-top: 40px;
-            padding-right: 12px;
-            min-width: 190px;
-        }
-
-        .tg-dot {
-            position: absolute;
-            top: 12px;
-            width: 13px;
-            height: 13px;
-            background: #333;
-            border-radius: 50%;
-        }
-
-        .tg-dot-left  { left: 0; }
-        .tg-dot-right { left: calc(50% - 6px); }
-
-        .tg-years {
-            display: flex;
+        .slide-content .slide-desc {
             font-size: 0.85em;
-            color: #888;
-            margin-bottom: 4px;
+            color: #555;
+            line-height: 1.5;
         }
-
-        .tg-years span { flex: 1; }
 
         /* Professional Services */
         .services-list {
@@ -393,14 +344,16 @@ title: About
             <!-- Left: profile -->
             <aside class="col-left">
                 <img src="/assets/photo.jpg" alt="Zhangkai Wu">
-                <h1>Zhangkai Wu 吴章凯</h1>
-                <p>Postdoctoral Research Fellow, Macquarie University</p>
-                <p>PhD, University of Technology Sydney</p>
-                <p>Master, Nanjing University</p>
+                <h1>Zhangkai Wu</h1>
+                <p>IEEE SMC Member</p>
+                <p>CAAI Member</p>
                 <div class="links">
                     <a href="mailto:zhangkai.wu@mq.edu.au">Email</a>
                     <a href="#">Google Scholar</a>
                     <a href="#">Github</a>
+                </div>
+                <div style="margin-top: 16px; width: 140px; margin-left: auto; margin-right: auto;">
+                    <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=hJURyFUXTRDBYSuc7xc_CWtrMOMS56PFiKx53Vz0vU4&w=140&h=140"></script>
                 </div>
             </aside>
 
@@ -408,9 +361,12 @@ title: About
             <main class="col-right">
 
                 <h2 id="research">Research</h2>
-                <p>My research interests lie in foundational generative models, including diffusion models, LLMs, and CLIP, from both theoretical and model design perspectives, as well as their applications across different modalities and real-world scenarios.</p>
+                <p>I am now a Postdoctoral Research Fellow at Macquarie University. My research topic is Deep Probabilistic Generative Models, including diffusion models and LLMs, from both theoretical and model design perspectives, as well as their applications across different modalities and real-world scenarios.</p>
                 <table class="research-table">
                     <thead>
+                        <tr>
+                            <th colspan="3" style="text-align:center; font-size:1.1em; font-weight:bold; padding-bottom:12px; border-bottom:none;">Deep Probabilistic Generative Models</th>
+                        </tr>
                         <tr>
                             <th>Settings</th>
                             <th>Tasks</th>
@@ -443,38 +399,36 @@ title: About
                 <p>Please refer to my <a href="/publications">publications</a> for the full list of my research papers.</p>
 
                 <h2 id="teaching">Teaching</h2>
-                <div class="timeline">
-                    <div class="timeline-track">
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-year">2018</div>
-                            <div class="timeline-title">Advanced Machine Learning</div>
-                            <div class="timeline-desc">Co-lectured with Prof. Yang Gao</div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-year">2021</div>
-                            <div class="timeline-title">Data Science<br>COMP220/6200</div>
-                            <div class="timeline-desc">Co-lectured with Prof. Longbing Cao</div>
-                        </div>
-                        <div class="timeline-group">
-                            <div class="tg-dot tg-dot-left"></div>
-                            <div class="tg-dot tg-dot-right"></div>
-                            <div class="tg-years">
-                                <span>2024 S2</span>
-                                <span>2025 S1 S2</span>
-                            </div>
-                            <div class="timeline-title">Advanced Machine Learning<br>COMP8221</div>
-                            <div class="timeline-desc">GNN, Generative Models, RL<br>Co-lectured with Dr. Xuhui Fan &amp; Dr. Yanqiu Wu</div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-year">2026 S1</div>
-                            <div class="timeline-title">Advanced Natural Language Processing</div>
-                            <div class="timeline-desc">COMP8420<br>Guest Lecture</div>
-                        </div>
+                <div class="teaching-slider">
+                    <div class="slider-labels">
+                        <span>2018</span>
+                        <span>2021</span>
+                        <span>2024–2025</span>
+                        <span>2026</span>
                     </div>
+                    <input type="range" min="0" max="3" value="0" step="1" id="teachingSlider">
+                    <div class="slide-content" id="slideContent"></div>
                 </div>
+                <script>
+                (function() {
+                    var slides = [
+                        { year: '2018', title: 'Advanced Machine Learning', desc: 'Co-lectured with Prof. Yang Gao' },
+                        { year: '2021', title: 'Data Science', desc: 'COMP220/6200<br>Co-lectured with Prof. Longbing Cao' },
+                        { year: '2024 S2 – 2025 S1 S2', title: 'Advanced Machine Learning', desc: 'COMP8221<br>GNN, Generative Models, RL<br>Co-lectured with Dr. Xuhui Fan &amp; Dr. Yanqiu Wu' },
+                        { year: '2026 S1', title: 'Advanced Natural Language Processing', desc: 'COMP8420<br>Guest Lecture' }
+                    ];
+                    var slider = document.getElementById('teachingSlider');
+                    var content = document.getElementById('slideContent');
+                    function render(i) {
+                        var s = slides[i];
+                        content.innerHTML = '<div class="slide-year">' + s.year + '</div>' +
+                            '<div class="slide-title">' + s.title + '</div>' +
+                            '<div class="slide-desc">' + s.desc + '</div>';
+                    }
+                    slider.addEventListener('input', function() { render(this.value); });
+                    render(0);
+                })();
+                </script>
 
                 <h2 id="services">Professional Services</h2>
                 <ul class="services-list">
@@ -482,6 +436,7 @@ title: About
                     <li>Special Track Chair in <a href="https://besc-conf.org/2025/special-session-3">BESC 2025</a></li>
                     <li>Special Track Chair in <a href="https://besc-conf.org/2026/special-session-2">BESC 2026</a></li>
                 </ul>
+
 
             </main>
 
